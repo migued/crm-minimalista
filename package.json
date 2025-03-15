@@ -1,0 +1,36 @@
+{
+  "name": "crm-minimalista",
+  "version": "1.0.0",
+  "description": "CRM Minimalista con automatizaciones, campañas de correo e integración de WhatsApp",
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server",
+    "common"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:server": "cd server && npm run dev",
+    "start:client": "cd client && npm run dev",
+    "build": "npm run build:common && npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "build:common": "cd common && npm run build",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "clean": "rimraf **/node_modules **/dist **/build",
+    "test": "concurrently \"npm run test:server\" \"npm run test:client\"",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "rimraf": "^5.0.0"
+  }
+}
