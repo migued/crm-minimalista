@@ -325,7 +325,7 @@ const ActionConfig: React.FC<ActionConfigProps> = ({
                   placeholder="Escribe el mensaje que se enviará..."
                 />
                 <p className="mt-1 text-xs text-gray-500">
-                  Puedes usar variables como {{contact.name}}, {{contact.email}}
+                  Puedes usar variables como {"{contact.name}"}, {"{contact.email}"}
                 </p>
               </div>
             )}
@@ -735,7 +735,7 @@ const ActionConfig: React.FC<ActionConfigProps> = ({
                 placeholder='{"key": "value"}'
               />
               <p className="mt-1 text-xs text-gray-500">
-                Formato JSON. Puedes usar variables como {{contact.name}}
+                Formato JSON. Puedes usar variables como {"{contact.name}"}
               </p>
             </div>
           </div>
